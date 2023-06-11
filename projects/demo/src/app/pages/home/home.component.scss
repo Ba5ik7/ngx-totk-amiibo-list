@@ -1,7 +1,7 @@
 .header-background {
   overflow: hidden;
   position: relative;
-  height: 420px;
+  height: 300px;
 }
 
 .header-background::before {
@@ -52,10 +52,19 @@
 }
 
 .home-main {
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   width: 75%;
   max-width: 1080px;
   margin: auto;
-
-
+  
+  .amiibo-list {
+    display: flex;
+    flex-wrap: wrap;
+    .mat-mdc-card {
+      width: 300px;
+      margin: 20px;
+    }
+  }
 }

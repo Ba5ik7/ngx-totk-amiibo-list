@@ -1,15 +1,24 @@
-<header focusOnNavigation class="header-background" aria-label="Get started" id="homepage-header">
+<header focusOnNavigation class="header-background" >
   <div class="header-section">
     <div class="header-headline">
-      <h1>Ngx-TotkAmiiboList</h1>
+      <h1>Totk-Amiibos</h1>
     </div>
     <div class="header-start">
-      <a mat-raised-button>Get started</a>
+      <ngx-search-input class="search-input" [list]="list$" (filteredList)="filteredListSubject.next($event)"></ngx-search-input>
     </div>
   </div>
 </header>
 <main class="home-main">
-  <mat-card appearance="outlined">
-    <h1>Test</h1>
-  </mat-card>
+  <div class="amiibo-list">
+    <ng-container *ngFor="let item of filteredListSubject | async">
+      <mat-card>
+        <img mat-card-image [src]="'./assets/img/' + item.image" [alt]="item.name">
+        <mat-card-content>
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <p>{{item.exclusives}}</p>
+          <p>{{item.extras}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
 </main>

@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { TerryLibModule } from 'terry-lib';
+import { SearchInputComponent } from '../../components/search-input/search-input.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TerryLibModule } from 'terry-lib';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-    TerryLibModule
+    TerryLibModule,
+    SearchInputComponent
   ]
 })
 export class HomeModule { }
