@@ -65,6 +65,25 @@
     .mat-mdc-card {
       width: 300px;
       margin: 20px;
+
+      .mat-mdc-card-title {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 20px;
+        margin: 15px 0 10px 0;
+      }
+      h6 {
+        font-size: 15px;
+        font-weight: 100;
+        line-height: 20px;
+        margin: 5px 0 0 0;
+      }
+      .mat-divider{
+        margin-bottom: 15px;
+      }
+      p {
+        white-space: pre-line
+      }
     }
   }
 }

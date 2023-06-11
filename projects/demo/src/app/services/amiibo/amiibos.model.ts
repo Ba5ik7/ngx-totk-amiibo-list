@@ -11,14 +11,14 @@ export const amiibos: Amiibo[] = [
     name: 'Tears of the Kingdom Link Amiibo',
     image: 'Tears of the Kingdom Link Amiibo.webp',
     exclusives: "Champion's Leathers Paraglider Skin",
-    extras: "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Knight's Broadsword\r\n" +
       'Assorted Mushrooms (Chillshroom, Hearty Truffle, Hylian Shroom, Rushroom, Zapshroom, Stamella Shroom, Skyshroom, Ironshroom, Sunshroom, Brightcap, Razorshroom)'
   },
   {
     name: 'Breath of the Wild Rider Link Amiibo',
     image: 'Breath of the Wild Rider Link Amiibo.webp',
     exclusives: 'Hylian-Hood Paraglider Fabric',
-    extras: "Soldier's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Soldier's Broadsword\r\n" +
       'Arrows\r\n' +
       'Assorted Mushrooms (Chillshroom, Hearty Truffle, Hylian Shroom, Rushroom, Zapshroom, Stamella Shroom, Skyshroom, Ironshroom, Sunshroom, Brightcap, Razorshroom)'
   },
@@ -38,7 +38,7 @@ export const amiibos: Amiibo[] = [
       'Cap of Twilight\r\n' +
       'Tunic of Twilight\r\n' +
       'Trousers of Twilight',
-    extras: "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Knight's Broadsword\r\n" +
       "Soldier's Shield\r\n" +
       'Assorted Fruits and Nuts (Wildberry, Voltfruit, Apple, Mighty Bananas, Hydromelon, Palm Fruit, Spicy Pepper, Chickaloo Tree Nut, Acorn)'
   },
@@ -50,7 +50,7 @@ export const amiibos: Amiibo[] = [
       'Tunic of Time\r\n' +
       'Trousers of Time\r\n' +
       'Biggoron Sword',
-    extras: "Soldier's Claymore (Tarnished or Untarnished)\r\n" +
+    extras: "Soldier's Claymore\r\n" +
       'Arrows\r\n' +
       'Assorted Meat (Raw Meat, Raw Prime Meat, Raw Gourmet Meat)'
   },
@@ -62,7 +62,7 @@ export const amiibos: Amiibo[] = [
       'Fierce Deity Armor\r\n' +
       'Fierce Deity Boots\r\n' +
       'Fierce Deity Sword',
-    extras: "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Knight's Broadsword\r\n" +
       'Assorted Mushrooms (Chillshroom, Hearty Truffle, Hylian Shroom, Rushroom, Zapshroom, Stamella Shroom, Skyshroom, Ironshroom, Sunshroom, Brightcap, Razorshroom)'
   },
   {
@@ -73,7 +73,7 @@ export const amiibos: Amiibo[] = [
       'Tunic of the Sky\r\n' +
       'Trousers of the Sky\r\n' +
       'White Sword of the Sky',
-    extras: "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Knight's Broadsword\r\n" +
       "Knight's Shield, Soldier's Shield\r\n" +
       'Arrows\r\n' +
       'Wooden Boxes of Materials'
@@ -87,8 +87,8 @@ export const amiibos: Amiibo[] = [
       'Trousers of the Wind\r\n' +
       'Sea Breeze Shield\r\n' +
       'Sea Breeze Boomerang',
-    extras: 'Boomerang (Tarnished or Untarnished)\r\n' +
-      "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: 'Boomerang\r\n' +
+      "Knight's Broadsword\r\n" +
       'Arrows\r\n' +
       'Assorted Fish (Armored Carp, Mighty Cap, Chillfin Trout, Hyrule Bass, Mighty Porgy, Staminoka Bass)'
   },
@@ -99,7 +99,7 @@ export const amiibos: Amiibo[] = [
       'Mask of Awakening\r\n' +
       'Tunic of Awakening\r\n' +
       'Trousers of Awakening',
-    extras: "Soldier's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Soldier's Broadsword\r\n" +
       'Arrows\r\n' +
       'Barrels (Explosive and Materials)'
   },
@@ -111,7 +111,7 @@ export const amiibos: Amiibo[] = [
       'Tunic of the Hero\r\n' +
       'Trousers of the Hero\r\n' +
       'Sword of the Hero',
-    extras: "Knight's Broadsword (Tarnished or Untarnished)\r\n" +
+    extras: "Knight's Broadsword\r\n" +
       "Soldier's Shield, Knight's Shield\r\n" +
       'Arrows\r\n' +
       'Barrels (Explosive and Materials)'
@@ -152,7 +152,7 @@ export const amiibos: Amiibo[] = [
     name: 'Smash Brothers Sheik Amiibo',
     image: 'Smash Brothers Sheik Amiibo.webp',
     exclusives: "Sheik Paraglider Fabric\r\nSheik's Mask",
-    extras: 'Eightfold Blade (Tarnished or Untarnished)\r\n' +
+    extras: 'Eightfold Blade\r\n' +
       "Shield of the Mind's Eye\r\n" +
       'Phrenic Bow\r\n' +
       'Arrows\r\n' +
@@ -168,7 +168,7 @@ export const amiibos: Amiibo[] = [
     name: 'Smash Brothers Gannondorf Amiibo',
     image: 'Smash Brothers Gannondorf Amiibo.webp',
     exclusives: 'Demon King Paraglider Fabric\r\nDusk Claymore',
-    extras: 'Gerudo Claymore (Tarnished or Untarnished)\r\n' +
+    extras: 'Gerudo Claymore\r\n' +
       'Bokoblin Guts\r\n' +
       'Raw Meat\r\n' +
       'Assorted Gems (Amber, Opal, Luminous Stone, Star Fragment, Sapphire, Ruby, Topaz, Diamond)'
@@ -177,14 +177,14 @@ export const amiibos: Amiibo[] = [
     name: 'Breath of the Wild Mipha Amiibo',
     image: 'Breath of the Wild Mipha Amiibo.webp',
     exclusives: 'Zora Champion Paraglider Fabric\r\nVah Ruta Divine Helm',
-    extras: 'Zora Spear (Tarnished or Untarnished)\r\n' +
+    extras: 'Zora Spear\r\n' +
       'Assorted Fish (Armored Carp, Mighty Cap, Chillfin Trout, Hyrule Bass, Mighty Porgy, Staminoka Bass)'
   },
   {
     name: 'Breath of the Wild Daruk Amiibo',
     image: 'Breath of the Wild Daruk Amiibo.webp',
     exclusives: 'Goron Champion Paraglider Fabric\r\nVah Rudania Divine Helm',
-    extras: 'Cobble Crusher (Tarnished or Untarnished)\r\n' +
+    extras: 'Cobble Crusher\r\n' +
       'Assorted Gems (Amber, Opal, Luminous Stone, Star Fragment, Sapphire, Ruby, Topaz, Diamond)'
   },
   {
@@ -199,7 +199,7 @@ export const amiibos: Amiibo[] = [
     name: 'Breath of the Wild Urbosa Amiibo',
     image: 'Breath of the Wild Urbosa Amiibo.webp',
     exclusives: 'Gerudo Champion Paraglider Fabric\r\nVah Naboris Divine Helm',
-    extras: 'Gerudo Scimitar (Tarnished or Untarnished)\r\n' +
+    extras: 'Gerudo Scimitar\r\n' +
       'Assorted Meat (Raw Meat, Raw Prime Meat, Raw Gourmet Meat, Raw Bird Drumstick, Raw Bird Thigh, Raw Whole Bird)'
   },
   {

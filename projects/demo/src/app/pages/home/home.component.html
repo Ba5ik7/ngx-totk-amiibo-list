@@ -15,7 +15,10 @@
         <img mat-card-image [src]="'./assets/img/' + item.image" [alt]="item.name">
         <mat-card-content>
           <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-divider></mat-divider>
+          <h6>Exclusives</h6>
           <p>{{item.exclusives}}</p>
+          <h6>Extras</h6>
           <p>{{item.extras}}</p>
         </mat-card-content>
       </mat-card>
