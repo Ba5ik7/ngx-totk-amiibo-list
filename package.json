@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
-    "build": "ng build demo --configuration development",
+    "build": "ng build demo --configuration production",
     "watch": "ng build terry-lib --watch --configuration development",
     "test": "ng test"
   },

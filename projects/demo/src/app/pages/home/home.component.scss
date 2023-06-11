@@ -62,9 +62,10 @@
   .amiibo-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
     .mat-mdc-card {
       width: 300px;
-      margin: 20px;
+      
 
       .mat-mdc-card-title {
         font-size: 15px;
@@ -83,6 +84,18 @@
       }
       p {
         white-space: pre-line
+      }
+    }
+  }
+}
+
+// if the witdh is less than 600px then mat-mdc-card width is 100%
+@media (max-width: 600px) {
+  .home-main {
+    .amiibo-list {
+      .mat-mdc-card {
+        width: 100%;
+        margin: 0 0 16px 0;
       }
     }
   }
