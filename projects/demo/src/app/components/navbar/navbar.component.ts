@@ -12,6 +12,11 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
         <mat-icon class="demo-logo">tips_and_updates</mat-icon>
         <span>Terry-Lib</span>
       </a>
+      <a mat-button class="docs-navbar-hide-small docs-button"
+          routerLink="viewer" routerLinkActive="navbar-menu-item-selected">
+        <!-- <img mat-fab-image class="section-logo" [src]="section.value.menuSvgPath"> -->
+        <span>Viewer</span>
+      </a>
       <div class="flex-spacer"></div>
       <ngx-theme-picker></ngx-theme-picker>
     </nav>

@@ -9,7 +9,7 @@ import { AmiiboService } from '../../services/amiibo/amiibo.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'ngx-home',
   template: `
     <header focusOnNavigation class="header-background" >
       <div class="header-section">
