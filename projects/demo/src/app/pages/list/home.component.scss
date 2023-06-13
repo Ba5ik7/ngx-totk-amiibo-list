@@ -88,6 +88,7 @@
   }
 }
 
+// if the witdh is less than 600px then mat-mdc-card width is 100%
 @media (max-width: 600px) {
   .home-main {
     .amiibo-list {

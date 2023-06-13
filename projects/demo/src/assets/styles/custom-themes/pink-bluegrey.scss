@@ -1,6 +1,5 @@
 @use '@angular/material' as mat;
 @use '../../../app/app-theme';
-@use '../highlightjs/material-dark';
 
 // Define the dark theme.
 $primary: mat.define-palette(mat.$pink-palette);
@@ -15,3 +14,17 @@ $theme: mat.define-dark-theme((
 
 @include mat.all-component-themes($theme);
 @include app-theme.theme($theme);
+
+.mat-drawer-content, .mat-sidenav-content, .app-background {
+  background-color: #303030;
+}
+
+.mat-mdc-card,
+.mat-mdc-card-outlined,
+mat-card.mat-mdc-card.mdc-card {
+  background-color: #424242;
+}
+
+.workshop-menu-nav, .workshop-controls-panel, .paginator {
+  background: #383838
+}

@@ -43,8 +43,8 @@
               },
               {
                 "inject": false,
-                "input": "projects/demo/src/assets/styles/custom-themes/indigo-pink.scss",
-                "bundleName": "indigo-pink"
+                "input": "projects/demo/src/assets/styles/custom-themes/indigo-green.scss",
+                "bundleName": "indigo-green"
               },
               {
                 "inject": false,

@@ -27,17 +27,3 @@
 //    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
 @include mat.all-component-typographies();
 @include mat.core();
-
-// @include mat.all-legacy-component-themes($theme);
-// @include app-theme.theme($theme);
-// @include editorjs.ngx-editorjs-theme($theme);
-
-[contenteditable] {
-  outline: 0px solid transparent;
-}
-
-.main-content {
-  display: block;
-  margin-top: 64px;
-}
-
