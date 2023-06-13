@@ -16,6 +16,9 @@ import { RouterModule } from '@angular/router';
       router-outlet {
         display: block;
         margin-bottom: 48px;
+        @media (max-width: 720px) {
+          margin-bottom: 96px;
+        }
       }
     }
   `],
