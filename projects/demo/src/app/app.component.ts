@@ -13,6 +13,10 @@ import { RouterModule } from '@angular/router';
       display: flex;
       flex-direction: column;
       height: 100vh;
+      router-outlet {
+        display: block;
+        margin-bottom: 64px;
+      }
     }
   `],
   standalone: true,
