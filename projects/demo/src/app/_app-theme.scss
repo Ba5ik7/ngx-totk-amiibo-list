@@ -2,6 +2,8 @@
 
 @use 'sass:map';
 @use './pages/home/home-theme';
+@use './pages/viewer/viewer-theme';
+@use './pages/map/map-theme';
 @use './components/navbar/navbar-theme';
 
 // Styles for the docs app that are based on the current theme.
@@ -30,5 +32,7 @@
   }
 
   @include home-theme.theme($theme);
+  @include viewer-theme.theme($theme);
+  @include map-theme.theme($theme);
   @include navbar-theme.theme($theme);
 }

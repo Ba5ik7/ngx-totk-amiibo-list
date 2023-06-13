@@ -13,7 +13,7 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
         <span class="logo-text">Totk-Amiibos</span>
       </a>
       <a mat-button class="docs-navbar-hide-small docs-button"
-          routerLink="" routerLinkActive="navbar-menu-item-selected">
+          routerLink="list" routerLinkActive="navbar-menu-item-selected">
         <span>List</span>
       </a>
       <a mat-button class="docs-navbar-hide-small docs-button"
@@ -29,7 +29,7 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
     </nav>
     <nav class="docs-navbar docs-navbar-show-small">
       <a mat-button class="docs-navbar-link"
-          routerLink="" routerLinkActive="navbar-menu-item-selected">
+          routerLink="list" routerLinkActive="navbar-menu-item-selected">
         <span>List</span>
       </a>
       <a mat-button class="docs-navbar-link"
@@ -37,7 +37,7 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
         <span>Viewer</span>
       </a>
       <a mat-button class="docs-navbar-link"
-          routerLink="" routerLinkActive="navbar-menu-item-selected">
+          routerLink="map" routerLinkActive="navbar-menu-item-selected">
         <span>Map</span>
       </a>
     </nav>

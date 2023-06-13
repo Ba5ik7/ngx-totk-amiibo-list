@@ -10,7 +10,9 @@
 
   ngx-navbar {
     color: mat.get-color-from-palette($primary, default-contrast);
-
+    .mdc-button__label {
+      color: mat.get-color-from-palette($primary, default-contrast);
+    }
     .navbar-header, .docs-navbar {
       background: mat.get-color-from-palette($primary);
 

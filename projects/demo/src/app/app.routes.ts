@@ -15,8 +15,17 @@ export const appRoutes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
       },
       {
+        path: 'list',
+        pathMatch: 'full',
+        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
+      },
+      {
         path: 'viewer',
         loadComponent: () => import('./pages/viewer/viewer.component').then(m => m.ViewerComponent),
+      },
+      {
+        path: 'map',
+        loadComponent: () => import('./pages/map/map.component').then(m => m.MapComponent),
       }
     ]
   }
