@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
       height: 100vh;
       router-outlet {
         display: block;
-        margin-bottom: 64px;
+        margin-bottom: 48px;
       }
     }
   `],

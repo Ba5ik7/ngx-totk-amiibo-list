@@ -9,12 +9,11 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
   template: `
     <nav class="navbar-header mat-elevation-z6">
       <a mat-button routerLink="/" class="demo-logo-container">
-        <mat-icon class="demo-logo">tips_and_updates</mat-icon>
-        <span>Terry-Lib</span>
+        <img class="logo-img" src="./assets/img/amiibo-logo.png">
+        <span class="logo-text">Totk-Amiibos</span>
       </a>
       <a mat-button class="docs-navbar-hide-small docs-button"
           routerLink="viewer" routerLinkActive="navbar-menu-item-selected">
-        <!-- <img mat-fab-image class="section-logo" [src]="section.value.menuSvgPath"> -->
         <span>Viewer</span>
       </a>
       <div class="flex-spacer"></div>
@@ -27,18 +26,26 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
       left: 0;
       right: 0;
       z-index: 2;
-    }
-    .navbar-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 8px 16px;
-    }
-    mat-icon.demo-logo {
-      font-size: 1.625rem;
-      width: 26px;
-      height: 26px;
-      vertical-align: middle;
+
+      a {
+        margin-right: 8px;
+      }
+      .navbar-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 16px;
+      }
+      .logo-img {
+        width: 26px;
+        height: 26px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+      .logo-text {
+        vertical-align: middle;
+        font-size: 1.225rem;
+      }
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
