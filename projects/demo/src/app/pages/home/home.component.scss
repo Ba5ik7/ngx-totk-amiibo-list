@@ -63,10 +63,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: space-evenly;
     .mat-mdc-card {
       width: 300px;
-      
-
       .mat-mdc-card-title {
         font-size: 15px;
         font-weight: 600;
