@@ -54,6 +54,7 @@
 .home-main {
   display: flex;
   flex-direction: column;
+
   padding: 16px;
   width: 75%;
   max-width: 1080px;
@@ -63,7 +64,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    justify-content: space-evenly;
+    justify-content: center;
     .mat-mdc-card {
       width: 300px;
       .mat-mdc-card-title {
