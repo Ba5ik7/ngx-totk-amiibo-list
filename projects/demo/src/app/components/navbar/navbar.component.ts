@@ -21,7 +21,7 @@ import { ThemePickerComponent } from '../theme-picker/theme-picker.component';
         <span>Viewer</span>
       </a>
       <a mat-button class="docs-navbar-hide-small docs-button"
-          routerLink="" routerLinkActive="navbar-menu-item-selected">
+          routerLink="map" routerLinkActive="navbar-menu-item-selected">
         <span>Map</span>
       </a>
       <div class="flex-spacer"></div>
