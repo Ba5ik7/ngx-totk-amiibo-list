@@ -4,7 +4,7 @@ import { THREEx } from '@ar-js-org/ar.js-threejs';
 import { ArToolkitSource } from '@ar-js-org/ar.js-threejs/types/ArToolkitSource';
 import { ArToolkitContext } from '@ar-js-org/ar.js-threejs/types/ArToolkitContext';
 import { ArMarkerControls } from '@ar-js-org/ar.js-threejs/types/ArMarkerControls';
-
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,7 @@ export class ArService {
   private arToolkitSource!: ArToolkitSource; 
   private arToolkitContext!: ArToolkitContext; 
   private arMarker!: ArMarkerControls;
+  private resizeListener!: () => void;
 
   constructor(private ngZone: NgZone) { }
 
@@ -31,6 +32,7 @@ export class ArService {
       this.initSceneAndCamera(container);
       this.initArToolkitSource();
     });
+
   }
 
   private initRenderer() {
@@ -71,17 +73,16 @@ export class ArService {
         this.initArToolkitContext();
       });
 
+      this.onResize();
       setTimeout(() => {
         this.onResize();
       }, 2000);
-    }, (error: any) => { 
-      console.error(error);
-      error = JSON.stringify(error, null, 2);
-    });
+    }, () => { console.log('error') });
 
-    window.addEventListener('resize', () => {
+    this.resizeListener = () => {
       this.onResize();
-    });
+    };
+    window.addEventListener('resize', this.resizeListener);
   }
 
   private onResize() {
@@ -134,15 +135,37 @@ export class ArService {
   }
 
   private createObjects() {
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshNormalMaterial({
-      transparent: true,
-      opacity: 0.5,
-      side: THREE.DoubleSide
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.y = geometry.parameters.height / 2;
-    this.scene.add(mesh);
+    // const geometry = new THREE.BoxGeometry(1, 1, 1);
+    // const material = new THREE.MeshNormalMaterial({
+    //   transparent: true,
+    //   opacity: 0.5,
+    //   side: THREE.DoubleSide
+    // });
+    // const mesh = new THREE.Mesh(geometry, material);
+    // mesh.position.y = geometry.parameters.height / 2;
+    // this.scene.add(mesh);
+
+    var loader = new GLTFLoader();
+
+    loader.load(
+      // URL to the GLB/GLTF file
+      'assets/img/mario_3d_scan.glb',
+      // called when the resource is loaded
+      (gltf) => {
+        gltf.scene.scale.set(40, 40, 40);
+        gltf.scene.rotation.y = 140;
+        this.scene.add(gltf.scene);
+      },
+      // called while loading is progressing
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+      },
+      // called when loading has errors
+      (error) => {
+        console.log('An error happened:', error);
+      }
+    );
+    
   }
 
   private animate() {
@@ -158,5 +181,50 @@ export class ArService {
     this.scene.visible = this.camera.visible;
 
     this.renderer.render(this.scene, this.camera);
+  }
+
+  dispose() {
+    // remove the event listener when cleaning up
+    if(this.resizeListener) {
+      window.removeEventListener('resize', this.resizeListener);
+    }
+
+    // Cleanup THREE.js and AR.js
+    if (this.renderer) {
+      this.renderer.dispose();
+      this.renderer.forceContextLoss();
+    }
+
+    if (this.scene) {
+      while(this.scene.children.length > 0){ 
+        const object = this.scene.children[0]; 
+        object.parent?.remove(object); 
+      }
+      this.scene.remove(this.camera);
+    }
+
+    if (this.arToolkitSource) {
+      this.arToolkitSource.domElement = null;
+    }
+
+    if (this.arToolkitContext) {
+      this.arToolkitContext.arController = null;
+    }
+
+    if (this.arMarker) {
+      this.arMarker.dispose();
+    }
+
+    // Remove this dom element from the body #arjs-video
+    const video = document.getElementById('arjs-video');
+    if (video) {
+      video.remove();
+    }
+    // Remove this dom element from the body canvas
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove();
+    }
+
   }
 }

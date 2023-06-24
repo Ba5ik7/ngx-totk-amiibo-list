@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArService } from '../../services/ar/ar.service';
 
@@ -9,7 +9,7 @@ import { ArService } from '../../services/ar/ar.service';
   template: `<div #container></div><p>{{error}}`,
   styles: []
 })
-export class ViewerComponent implements OnInit {
+export class ViewerComponent implements OnInit, OnDestroy {
   arService = inject(ArService);
   error = this.arService.error;
 
@@ -17,5 +17,9 @@ export class ViewerComponent implements OnInit {
 
   ngOnInit() {
     this.arService.initialize(this.containerRef.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.arService.dispose();
   }
 }
