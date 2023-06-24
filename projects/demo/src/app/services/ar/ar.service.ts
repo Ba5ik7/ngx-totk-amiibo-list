@@ -9,6 +9,7 @@ import { ArMarkerControls } from '@ar-js-org/ar.js-threejs/types/ArMarkerControl
   providedIn: 'root'
 })
 export class ArService {
+  error = '';
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
   private camera!: THREE.Camera;
@@ -70,27 +71,30 @@ export class ArService {
         this.initArToolkitContext();
       });
 
-      // setTimeout(() => {
-      //   this.onResize();
-      // }, 2000);
-    }, () => { console.log('error') });
+      setTimeout(() => {
+        this.onResize();
+      }, 2000);
+    }, (error: any) => { 
+      console.error(error);
+      error = JSON.stringify(error, null, 2);
+    });
 
-    // window.addEventListener('resize', () => {
-    //   this.onResize();
-    // });
+    window.addEventListener('resize', () => {
+      this.onResize();
+    });
   }
 
-  // private onResize() {
-  //   this.arToolkitSource.onResizeElement();
-  //   this.arToolkitSource.copyElementSizeTo(this.renderer.domElement);
-  //   if (this.arToolkitContext.arController !== null) {
-  //     this.arToolkitSource.copyElementSizeTo(this.arToolkitContext.arController.canvas);
-  //   }
-  // }
+  private onResize() {
+    this.arToolkitSource.onResizeElement();
+    this.arToolkitSource.copyElementSizeTo(this.renderer.domElement);
+    if (this.arToolkitContext.arController !== null) {
+      this.arToolkitSource.copyElementSizeTo(this.arToolkitContext.arController.canvas);
+    }
+  }
 
   private initArToolkitContext() {
     this.arToolkitContext = new THREEx.ArToolkitContext({
-      cameraParametersUrl: '/assets/img/camera_para.dat',
+      cameraParametersUrl: 'assets/img/camera_para.dat',
       detectionMode: 'mono'
     });
 
@@ -119,7 +123,7 @@ export class ArService {
   private initMarker() {
     this.arMarker = new THREEx.ArMarkerControls(this.arToolkitContext, this.camera, {
       type: 'pattern',
-      patternUrl: '/assets/img/patt.hiro',
+      patternUrl: 'assets/img/patt.hiro',
       changeMatrixMode: 'cameraTransformMatrix'
     });
 
