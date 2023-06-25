@@ -160,7 +160,7 @@ export class ArService {
       // 'assets/img/amiibo_zelda_twilight_princess.glb',
       // called when the resource is loaded
       (gltf) => {
-        gltf.scene.scale.set(10, 10, 10);
+        gltf.scene.scale.set(30, 30, 30);
         gltf.scene.rotation.y = 140;
         this.scene.add(gltf.scene);
       },
