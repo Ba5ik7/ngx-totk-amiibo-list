@@ -41,7 +41,7 @@ export class ArService {
       alpha: true
     });
     this.renderer.setClearColor(new THREE.Color('lightgrey'), 0);
-    this.renderer.setSize(window.innerWidth > window.innerHeight ? 640 : 390, window.innerWidth > window.innerHeight ? 390 : 640);
+    this.renderer.setSize(390, 640);
     this.renderer.domElement.style.position = 'absolute';
     this.renderer.domElement.style.top = '96px';
     this.renderer.domElement.style.left = '0px';
@@ -57,10 +57,10 @@ export class ArService {
   private initArToolkitSource() {
     this.arToolkitSource = new THREEx.ArToolkitSource({
       sourceType: 'webcam',
-      sourceWidth: window.innerWidth > window.innerHeight ? 640 : 390,
-      sourceHeight: window.innerWidth > window.innerHeight ? 390 : 640,
-      displayWidth: window.innerWidth > window.innerHeight ? 640 : 390,
-      displayHeight: window.innerWidth > window.innerHeight ? 390 : 640
+      sourceWidth: 390,
+      sourceHeight: 640,
+      displayWidth: 390,
+      displayHeight : 640
     });
 
     this.arToolkitSource.init(() => {
