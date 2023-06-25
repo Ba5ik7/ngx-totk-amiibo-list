@@ -41,9 +41,9 @@ export class ArService {
       alpha: true
     });
     this.renderer.setClearColor(new THREE.Color('lightgrey'), 0);
-    this.renderer.setSize(640, 480);
+    this.renderer.setSize(window.innerWidth > window.innerHeight ? 640 : 390, window.innerWidth > window.innerHeight ? 390 : 640);
     this.renderer.domElement.style.position = 'absolute';
-    this.renderer.domElement.style.top = '0px';
+    this.renderer.domElement.style.top = '96px';
     this.renderer.domElement.style.left = '0px';
     document.body.appendChild(this.renderer.domElement);
   }
@@ -57,8 +57,10 @@ export class ArService {
   private initArToolkitSource() {
     this.arToolkitSource = new THREEx.ArToolkitSource({
       sourceType: 'webcam',
-      sourceWidth: window.innerWidth > window.innerHeight ? 640 : 480,
-      sourceHeight: window.innerWidth > window.innerHeight ? 480 : 640,
+      sourceWidth: window.innerWidth > window.innerHeight ? 640 : 390,
+      sourceHeight: window.innerWidth > window.innerHeight ? 390 : 640,
+      displayWidth: window.innerWidth > window.innerHeight ? 640 : 390,
+      displayHeight: window.innerWidth > window.innerHeight ? 390 : 640
     });
 
     this.arToolkitSource.init(() => {
@@ -71,12 +73,12 @@ export class ArService {
         );
   
         this.initArToolkitContext();
-      });
+      });``
 
-      this.onResize();
-      setTimeout(() => {
-        this.onResize();
-      }, 2000);
+      // this.onResize();
+      // setTimeout(() => {
+      //   this.onResize();
+      // }, 2000);
     }, () => { console.log('error') });
 
     this.resizeListener = () => {
@@ -124,11 +126,16 @@ export class ArService {
   private initMarker() {
     this.arMarker = new THREEx.ArMarkerControls(this.arToolkitContext, this.camera, {
       type: 'pattern',
-      patternUrl: 'assets/img/patt.hiro',
+      patternUrl: '/assets/img/Link-SSB.patt',
       changeMatrixMode: 'cameraTransformMatrix'
     });
 
+
+
     this.scene.visible = false;
+
+    const video = document.getElementById('arjs-video');
+    video?.style.setProperty('top', '96px');
 
     this.createObjects();
     this.animate();
@@ -150,9 +157,10 @@ export class ArService {
     loader.load(
       // URL to the GLB/GLTF file
       'assets/img/mario_3d_scan.glb',
+      // 'assets/img/amiibo_zelda_twilight_princess.glb',
       // called when the resource is loaded
       (gltf) => {
-        gltf.scene.scale.set(40, 40, 40);
+        gltf.scene.scale.set(10, 10, 10);
         gltf.scene.rotation.y = 140;
         this.scene.add(gltf.scene);
       },
