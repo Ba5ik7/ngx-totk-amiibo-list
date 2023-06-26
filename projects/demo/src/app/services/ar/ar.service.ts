@@ -5,11 +5,15 @@ import { ArToolkitSource } from '@ar-js-org/ar.js-threejs/types/ArToolkitSource'
 import { ArToolkitContext } from '@ar-js-org/ar.js-threejs/types/ArToolkitContext';
 import { ArMarkerControls } from '@ar-js-org/ar.js-threejs/types/ArMarkerControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ArService {
-  error = '';
+
+  private loadingProgress = new BehaviorSubject<number>(0);
+  loadingProgress$ = this.loadingProgress.asObservable();
+
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
   private camera!: THREE.Camera;
@@ -81,10 +85,10 @@ export class ArService {
       }, 2000);
     }, () => { console.log('error') });
 
-    this.resizeListener = () => {
-      this.onResize();
-    };
-    window.addEventListener('resize', this.resizeListener);
+    // this.resizeListener = () => {
+    //   this.onResize();
+    // };
+    // window.addEventListener('resize', this.resizeListener);
   }
 
   private onResize() {
@@ -167,6 +171,10 @@ export class ArService {
       // called while loading is progressing
       (xhr) => {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        this.loadingProgress.next(xhr.loaded / xhr.total * 100);
+        if (xhr.loaded / xhr.total * 100 === 100) {
+          this.loadingProgress.complete();
+        }
       },
       // called when loading has errors
       (error) => {
@@ -193,9 +201,9 @@ export class ArService {
 
   dispose() {
     // remove the event listener when cleaning up
-    if(this.resizeListener) {
-      window.removeEventListener('resize', this.resizeListener);
-    }
+    // if(this.resizeListener) {
+    //   window.removeEventListener('resize', this.resizeListener);
+    // }
 
     // Cleanup THREE.js and AR.js
     if (this.renderer) {
